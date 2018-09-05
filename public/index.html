@@ -5,24 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Blog</title>
     <link rel="stylesheet" type="text/css" href="/dist/styles.css">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:300,400" rel="stylesheet">
-    <link rel="manifest" href="/manifest.webmanifest">
     <!-- FAVICON -->
     <!-- SPLASHSCREEN IOS -->
 </head>
 <body>
     <div id="app"></div>
-    <script>
-            if ('serviceWorker' in navigator) {
-                window.addEventListener('load', function() {
-                navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
-                }, function(err) {
-                    // registration failed :(
-                    console.log('ServiceWorker registration failed: ', err);
-                });
-                });
-            }
-        </script>
     <script src="/dist/bundle.js"></script>
 </body>
 </html>

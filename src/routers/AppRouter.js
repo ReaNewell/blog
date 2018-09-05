@@ -5,6 +5,7 @@ import createHistory from 'history/createBrowserHistory';
 // import PrivateRoute from './PrivateRoute';
 // import PublicRoute from './PublicRoute';
 
+import AdminPage from '../components/admin/AdminPage';
 import HomePage from '../components/HomePage';
 
 export const history = createHistory();
@@ -14,6 +15,7 @@ const AppRouter = () => (
         <div>
             <Switch>
                 <Route path="/" component={HomePage} exact={true}/>
+                <Route path="/admin" component={AdminPage}/>
             </Switch>
         </div>
     </Router>
