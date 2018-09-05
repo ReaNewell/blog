@@ -1,0 +1,8 @@
+{
+    "name": "Blog",
+    "short_name": "Blog",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#7cB27D",
+    "description": "A blog."
+  }

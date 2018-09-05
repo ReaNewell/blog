@@ -1,0 +1,28 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Nunito';
+    margin: 0;
+    padding: 0;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+html {
+    font-size: 71.428571%;
+}
+
+body {
+    color: #262626;
+    font-size: 1.6rem;
+}
+
+button {
+    cursor: pointer;
+}
+button:disabled {
+    cursor: default;
+}
+button:focus {
+    outline: none;
+}
