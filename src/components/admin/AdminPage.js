@@ -1,5 +1,6 @@
 import React from 'react';
 import AdminSideBar from './AdminSideBar';
+import PostEditor from './PostEditor';
 
 class AdminPage extends React.Component {
     render() {
@@ -8,6 +9,7 @@ class AdminPage extends React.Component {
                 <AdminSideBar />
                 <div>
                     <h1>Admin Page</h1>
+                    <PostEditor />
                 </div>
             </div>
         )

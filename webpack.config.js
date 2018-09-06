@@ -1,8 +1,11 @@
 const path = require('path');
 const webpack = require('webpack');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';
+const devMode = process.env.NODE_ENV === 'production';
 
 if (process.env.NODE_ENV === 'test') {
     require('dotenv').config({ path: '.env.test' });
@@ -12,9 +15,19 @@ if (process.env.NODE_ENV === 'test') {
 
 module.exports = (env) => {
     const isProduction = env === 'production';
-    const CSSExtract = new ExtractTextPlugin('styles.css');
 
     return {
+        mode: process.env.NODE_ENV,
+        optimization: {
+            minimizer: [
+                new UglifyJsPlugin({
+                    cache: true,
+                    parallel: true,
+                    sourceMap: true
+                }),
+                new OptimizeCSSAssetsPlugin({})
+            ]
+        },
         entry: ['babel-polyfill', './src/app.js'],
         output: {
             path: path.join(__dirname, 'public', 'dist'),
@@ -27,26 +40,24 @@ module.exports = (env) => {
                 exclude: /node_modules/
             }, {
                 test: /\.s?css$/,
-                use: CSSExtract.extract({
-                    use: [
-                        {
-                            loader: 'css-loader',
-                            options: {
-                                sourceMap: true
-                            }
-                        },
-                        {
-                            loader: 'sass-loader',
-                            options: {
-                                sourceMap: true
-                            }
+                use: [{
+                        loader: devMode ? 'style-loader' : MiniCssExtractPlugin.loader
+                    },{
+                        loader: 'css-loader',
+                        options: {
+                            sourceMap: true
                         }
-                    ]
-                })
+                    },{
+                        loader: 'sass-loader',
+                        options: {
+                            sourceMap: true
+                        }
+                    }
+                ]
             }]
         },
         plugins: [
-            CSSExtract,
+            new MiniCssExtractPlugin('styles.css'),
             new webpack.DefinePlugin({
                 'process.env.FIREBASE_API_KEY': JSON.stringify(process.env.FIREBASE_API_KEY),
                 'process.env.FIREBASE_AUTH_DOMAIN': JSON.stringify(process.env.FIREBASE_AUTH_DOMAIN),
