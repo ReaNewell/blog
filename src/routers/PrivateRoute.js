@@ -5,9 +5,7 @@ import { Route, Redirect } from 'react-router-dom';
 export const PrivateRoute = ({ isAuthenticated, component: Component, ...rest }) => (
     <Route {...rest} component={(props) => (
         isAuthenticated ? ( 
-            <div>
-                <Component {...props}/>
-            </div>
+            <Component {...props}/>
         ) : (
             <Redirect to='/admin-login' />
         )

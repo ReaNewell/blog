@@ -10,6 +10,7 @@ class RecentPosts extends React.Component {
                     key = {post.id}
                     title = {post.title}
                     body = {post.body}
+                    date = {post.postDate}
                 />
             ))
         )
