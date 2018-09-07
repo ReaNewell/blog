@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Link } from 'react-router-dom';
 
 class SummarizedPost extends React.Component {
     constructor(props) {
@@ -20,11 +21,11 @@ class SummarizedPost extends React.Component {
     }
     render() {
         return (
-            <div>
+            <Link to={`/posts/${this.props.title.replace(" ", "-")}`}>
                 <h2>{this.props.title}</h2>
                 <p>{this.props.date.day}/{this.props.date.month + 1}/{this.props.date.year}</p>
                 <div className="summarizedpost__body"></div>
-            </div>
+            </Link>
         )
     }
 }
