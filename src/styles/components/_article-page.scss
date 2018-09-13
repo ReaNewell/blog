@@ -1,0 +1,39 @@
+.article-page {
+    box-sizing: border-box;
+    display: grid;
+    grid-template-areas:    "header header   header  header"
+                            ".      article sidebar  .     "
+                            "footer footer   footer  footer";
+    grid-template-rows: 30rem auto 5rem;
+    grid-auto-columns: 1fr 75rem 25rem 1fr;
+    min-height: 110vh;
+    width: 100vw;
+}
+
+.article {
+    background: $white;
+    box-shadow: -5px 0 10px rgba(0, 0, 0, 0.10);
+    grid-area: article;
+    padding: $l-size 0;
+
+    .article__title {
+        border-bottom: 2px solid $blue-med;
+        color: $blue-med;
+        font-size: $font-size-large;
+        margin: 0 $l-size $l-size;
+    }
+    .article__date {
+        text-align: right;
+        margin: 0 $l-size $l-size;
+    }
+    .article__body {
+        margin: 0 $l-size;
+
+        h1 {
+            font-size: $font-size-medium;
+            text-align: center;
+            margin: 1rem;
+        }
+        
+    }
+}

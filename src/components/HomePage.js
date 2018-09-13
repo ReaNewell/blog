@@ -8,9 +8,8 @@ import SideBar from './SideBar';
 class HomePage extends React.Component {
     render() {
         return (
-            <div>
+            <div className="homepage">
                 <Header />
-                <img className="homepage__banner" src="#"/>
                 <RecentPosts />
                 <SideBar />
                 <Footer />

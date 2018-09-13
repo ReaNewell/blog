@@ -5,14 +5,18 @@ import SummarizedPost from './SummarizedPost';
 class RecentPosts extends React.Component {
     render() {
         return (
-            this.props.posts.map((post) => (
-                <SummarizedPost 
-                    key = {post.id}
-                    title = {post.title}
-                    body = {post.body}
-                    date = {post.postDate}
-                />
-            ))
+            <div className="recent-posts">
+                <h2 className="recent-posts__title">Recent Articles</h2>
+                {this.props.posts.map((post) => (
+                    <SummarizedPost 
+                        key = {post.id}
+                        title = {post.title}
+                        imageName = {post.postPictureName}
+                        imagePath = {post.postPicture}
+                        date = {post.postDate}
+                    />
+                ))}
+            </div>
         )
     }
 }

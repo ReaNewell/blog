@@ -5,10 +5,11 @@ import PostEditor from './PostEditor';
 class AdminPage extends React.Component {
     render() {
         return (
-            <div>
+            <div className="dashboard">
                 <AdminSideBar />
-                <div>
-                    <h1>Admin Page</h1>
+                <div className="admin-page">
+                    <h1 className="admin-page__title">Admin Page</h1>
+                    <h2 className="admin-page__subtitle">Create A Post</h2>
                     <PostEditor />
                 </div>
             </div>

@@ -1,9 +1,7 @@
 import React from 'react';
-import { Navigation } from './Navigation';
 
 export const Header = () => (
-    <div>
-        <h1>Rea's Blog</h1>
-        <Navigation />
-    </div>
+    <header className="header">
+        <h1 className="header__title">Rea's Dev Journey</h1>
+    </header>
 );

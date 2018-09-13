@@ -4,7 +4,7 @@ import { NavigationButton } from '../NavigationButton';
 class AdminSideBar extends React.Component {
     render() {
         return (
-            <div>
+            <div className="admin-sidebar">
                 <h3>Hello, Rea</h3>
                 <NavigationButton 
                     destination="/admin"
@@ -18,6 +18,7 @@ class AdminSideBar extends React.Component {
                     destination="/admin/settings"
                     name="Settings"
                 />
+                <button>Logout</button>
             </div>
         )
     }

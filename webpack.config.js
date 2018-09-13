@@ -5,7 +5,7 @@ const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';
-const devMode = process.env.NODE_ENV === 'production';
+const devMode = process.env.NODE_ENV !== 'production';
 
 if (process.env.NODE_ENV === 'test') {
     require('dotenv').config({ path: '.env.test' });
@@ -18,16 +18,16 @@ module.exports = (env) => {
 
     return {
         mode: process.env.NODE_ENV,
-        optimization: {
-            minimizer: [
-                new UglifyJsPlugin({
-                    cache: true,
-                    parallel: true,
-                    sourceMap: true
-                }),
-                new OptimizeCSSAssetsPlugin({})
-            ]
-        },
+        // optimization: {
+        //     minimizer: [
+        //         new UglifyJsPlugin({
+        //             cache: true,
+        //             parallel: true,
+        //             sourceMap: true
+        //         }),
+        //         new OptimizeCSSAssetsPlugin({})
+        //     ]
+        // },
         entry: ['babel-polyfill', './src/app.js'],
         output: {
             path: path.join(__dirname, 'public', 'dist'),
@@ -57,7 +57,7 @@ module.exports = (env) => {
             }]
         },
         plugins: [
-            new MiniCssExtractPlugin('styles.css'),
+            new MiniCssExtractPlugin({fileName: 'styles.css'}),
             new webpack.DefinePlugin({
                 'process.env.FIREBASE_API_KEY': JSON.stringify(process.env.FIREBASE_API_KEY),
                 'process.env.FIREBASE_AUTH_DOMAIN': JSON.stringify(process.env.FIREBASE_AUTH_DOMAIN),

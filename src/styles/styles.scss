@@ -3,3 +3,14 @@
 @import './base/settings';
 
 // COMPONENTS
+@import './components/article-page';
+@import './components/footer';
+@import './components/header';
+@import './components/homepage';
+@import './components/recent-posts';
+@import './components/sidebar';
+@import './components/summarized-post';
+
+@import './components/admin/admin-page';
+@import './components/admin/admin-sidebar';
+@import './components/admin/post-editor';

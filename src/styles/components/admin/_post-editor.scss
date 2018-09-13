@@ -1,0 +1,38 @@
+.post-editor {
+    background: white;
+    margin: $m-size;
+    max-width: 75rem;
+    padding: $m-size;
+
+    .post-editor__title-input {
+        border: none;
+        border-bottom: 2px solid darken($white, 5%);
+        font-size: $font-size-medium;
+        margin-bottom: $m-size;
+        padding: .3rem;
+        width: 100%;
+
+        &:focus {
+            outline: none;
+            border-bottom: 2px solid $blue-light;
+        }
+    }
+    .post-editor__button {
+        padding: $s-size;
+    }
+}
+
+.pell {
+
+    .pell-actionbar {
+
+    }
+    .pell-button {
+        &:focus {
+            outline: -webkit-focus-ring-color auto 5px;
+        }
+    }
+    .pell-content {
+        min-height: 40rem;
+    }
+}

@@ -1,0 +1,11 @@
+.homepage {
+    box-sizing: border-box;
+    display: grid;
+    grid-template-areas:    "header header   header  header"
+                            ".      articles sidebar .     "
+                            "footer footer   footer  footer";
+    grid-template-rows: 30rem auto 5rem;
+    grid-auto-columns: 1fr 75rem 25rem 1fr;
+    min-height: 110vh;
+    width: 100vw;
+}

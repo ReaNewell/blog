@@ -15,15 +15,19 @@ class ArticlePage extends React.Component {
     } 
     componentDidMount() {
         // Selects this the body element of this component and assign the HTML value of the post to that element.
-        const body = ReactDOM.findDOMNode(this).getElementsByClassName('post__body')[0];
+        const body = ReactDOM.findDOMNode(this).getElementsByClassName('article__body')[0];
         body.innerHTML = this.state.html;
     }
     render() {
         return (
-            <div>
+            <div className="article-page">
                 <Header />
-                <h2>{this.props.post.title}</h2>
-                <div className="post__body" />
+                    <article className="article">
+                        <h2 className="article__title">{this.props.post.title}</h2>
+                        <p className="article__date">{this.props.post.postDate.month}/{this.props.post.postDate.day}/{this.props.post.postDate.year}</p>
+                        <div className="article__body" />
+                    </article>
+                    
                 <SideBar />
                 <Footer />
             </div>

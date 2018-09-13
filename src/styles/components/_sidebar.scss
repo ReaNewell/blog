@@ -1,0 +1,5 @@
+.sidebar {
+    background: darken($white, 2%);
+    box-shadow: 5px 0 10px rgba(0, 0, 0, 0.10);
+    grid-area: sidebar;
+}

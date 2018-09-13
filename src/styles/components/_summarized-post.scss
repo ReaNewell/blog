@@ -1,0 +1,34 @@
+.summarized-post {
+    background: $white;
+    box-shadow: $box-shadow;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-areas:    "image image"
+                            "title date";
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: auto auto;
+    margin: 0 $l-size $l-size $l-size;
+    width: auto;
+
+    .summarized-post__title {
+        color: $blue-dark;
+        font-size: $font-size-medium;
+        grid-area: title;
+        margin: $s-size;
+    }
+    .summarized-post__date {
+        grid-area: date;
+        margin: $s-size;
+        text-align: right;
+    }
+    .summarized-post__image {
+        box-sizing: border-box;
+        border-top: 1px solid darken($white, 10%);
+        color: $black;
+        display: block;
+        height: 15rem;
+        grid-area: image;
+        object-fit: cover;
+        width: 100%;
+    }
+}

@@ -1,0 +1,16 @@
+.header {
+    align-items: center;
+    background-image: url('/images/header.jpg');
+    background-position: center;
+    background-size: cover;
+    display: grid;
+    grid-template-areas: ". title";
+    grid-template-columns: 1fr 75rem 25rem 1fr;
+    grid-area: header;
+
+    .header__title {
+        color: $white;
+        font-size: $font-size-xlarge;
+        grid-area: title;
+    }
+}
