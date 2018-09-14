@@ -8,6 +8,17 @@ export default (state = defaultPostsReducerState, action) => {
             return state.filter((post) => post.id !== action.id);
         case "SET_POSTS":
             return action.posts;
+        case "UPDATE_POST":
+            return state.map(post => {
+                if (post.id === action.id) {
+                    return {
+                        ...post,
+                        ...action.updates
+                    };
+                } else {
+                    return post;
+                };
+            });
         default:
             return state;
     }

@@ -9,23 +9,36 @@ class EditPostPage extends React.Component {
         return (
             <div className="dashboard">
                 <AdminSideBar />
-                <div className="admin-page">
-                    <h1 className="admin-page__title">Edit Posts</h1>
-                    <h2 className="admin-page__subtitle">Posted Articles</h2>
+                { this.props.currentPost ? (
                     <div>
-                        { this.props.posts.map( post => (
-                            <PostTab 
-                                key={post.id} 
-                                post={post}
-                            />
-                        ))}
+                        <h1>Edit Posts</h1>
+                        <h2>Make changes to article, then save.</h2>
+                        <PostEditor 
+                            history = {this.props.history} 
+                            post={this.props.currentPost}
+                            updating={true}
+                        />
                     </div>
-                </div>
+                ) : (
+                    <div className="admin-page">
+                        <h1 className="admin-page__title">Edit Posts</h1>
+                        <h2 className="admin-page__subtitle">Posted Articles</h2>
+                        <div>
+                            { this.props.posts.map( post => (
+                                <PostTab 
+                                    key={post.id}
+                                    post={post}
+                                />
+                            ))}
+                        </div>
+                    </div>
+                )}
             </div>
         )
     }
 }
-const mapStateToProps = (state) => ({
+const mapStateToProps = (state, props) => ({
+    currentPost: props.match.params.title ? state.posts.find((post) => post.title === props.match.params.title.replace('-', ' ')) : null,
     posts: state.posts
 })
 

@@ -22,6 +22,7 @@ const AppRouter = () => (
                 <PublicRoute path="/admin-login" component={AdminLogin}/>
                 <PrivateRoute path="/admin" component={AdminPage} exact={true}/>
                 <PrivateRoute path="/admin/edit-posts" component={EditPostPage} exact={true}/>
+                <PrivateRoute path="/admin/edit-posts/:title" component={EditPostPage}/>
             </Switch>
         </div>
     </Router>

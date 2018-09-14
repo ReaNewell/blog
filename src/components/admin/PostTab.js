@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { startRemovePost } from '../../actions/posts';
 
 class PostTab extends React.Component {
@@ -24,7 +25,7 @@ class PostTab extends React.Component {
             <div>
                 <h3>{this.props.post.title}</h3>
                 <p>{this.props.post.postDate.month}/{this.props.post.postDate.day}/{this.props.post.postDate.year}</p>
-                <button>Edit Post</button>
+                <Link to={`/admin/edit-posts/${this.props.post.title}`}>Edit Post</Link>
                 {this.state.warning ? (
                     <div>
                         <p>Are you sure?</p>
