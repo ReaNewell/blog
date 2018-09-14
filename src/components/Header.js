@@ -1,7 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export const Header = () => (
     <header className="header">
-        <h1 className="header__title">Rea's Dev Journey</h1>
+        <Link className="header__title" to="/">Rea's Dev Journey</Link>
     </header>
 );

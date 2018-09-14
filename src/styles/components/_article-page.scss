@@ -4,7 +4,7 @@
     grid-template-areas:    "header header   header  header"
                             ".      article sidebar  .     "
                             "footer footer   footer  footer";
-    grid-template-rows: 30rem auto 5rem;
+    grid-template-rows: 15rem auto 5rem;
     grid-auto-columns: 1fr 75rem 25rem 1fr;
     min-height: 110vh;
     width: 100vw;
@@ -16,15 +16,21 @@
     grid-area: article;
     padding: $l-size 0;
 
-    .article__title {
+    &__title {
         border-bottom: 2px solid $blue-med;
         color: $blue-med;
         font-size: $font-size-large;
         margin: 0 $l-size $l-size;
     }
-    .article__date {
+    &__date {
         text-align: right;
-        margin: 0 $l-size $l-size;
+        margin: 0 $l-size;
+    }
+    &__image {
+        box-sizing: border-box;
+        display: block;
+        padding: $l-size;
+        width: 100%;
     }
     .article__body {
         margin: 0 $l-size;
@@ -34,6 +40,8 @@
             text-align: center;
             margin: 1rem;
         }
-        
+        blockquote {
+            text-align: center;
+        }
     }
 }

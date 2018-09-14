@@ -25,6 +25,7 @@ class ArticlePage extends React.Component {
                     <article className="article">
                         <h2 className="article__title">{this.props.post.title}</h2>
                         <p className="article__date">{this.props.post.postDate.month}/{this.props.post.postDate.day}/{this.props.post.postDate.year}</p>
+                        {this.props.post.postPicture && <img className="article__image" src={this.props.post.postPicture} alt={this.props.post.postPictureName}/>}
                         <div className="article__body" />
                     </article>
                     

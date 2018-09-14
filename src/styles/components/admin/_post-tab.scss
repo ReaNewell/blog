@@ -1,0 +1,36 @@
+.post-tab {
+    display: grid;
+    grid-template-areas:    "title title title title"
+                            "date  view  edit  delete";
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+
+    &__title {
+        grid-area: title;
+
+    }
+    &__date {
+        grid-area: date;
+
+    }
+    &__button {
+
+        &--edit {
+            grid-area: edit;
+        }
+        &--delete {
+            grid-area: delete;
+        }
+        &--view {
+            grid-area: view;
+        }
+    }
+
+}
+
+.warning {
+    position: absolute;
+    height: 20rem;
+    width: 20rem;
+    top: 0;
+}

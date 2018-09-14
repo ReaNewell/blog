@@ -10,7 +10,7 @@ class PostEditor extends React.Component {
 
         this.state = {
             error: "",
-            title: "",
+            title: this.props.post ? this.props.post.title : null,
             html: this.props.post ? this.props.post.body : null,
             updating: this.props.updating
         }
@@ -19,10 +19,12 @@ class PostEditor extends React.Component {
         this.editor = init({
             element: document.getElementById('editor'),
             onChange: html => this.setState({ html }),
-            actions: ['bold', 'underline', 'italic', 'heading1', 'heading2']
+            actions: ['bold', 'underline', 'italic', 'heading1', 'heading2', 'quote', 'code']
         })
-        this.editor.content.innerHTML = this.state.html;
-        document.getElementsByClassName('post-editor__title-input')[0].value = this.props.post.title;
+        if (this.state.updating) {
+            this.editor.content.innerHTML = this.state.html;
+            document.getElementsByClassName('post-editor__title-input')[0].value = this.state.title;
+        }
     }
     onTitleChange = (e) => {
         const title = e.target.value;
