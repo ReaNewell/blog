@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { Footer } from './Footer';
 import { Header } from './Header';
 import SideBar from './SideBar';
+import dateFormatter from '../tools/dateFormatter';
 
 class ArticlePage extends React.Component {
     constructor(props) {
@@ -23,8 +24,8 @@ class ArticlePage extends React.Component {
             <div className="article-page">
                 <Header />
                     <article className="article">
-                        <h2 className="article__title">{this.props.post.title}</h2>
-                        <p className="article__date">{this.props.post.postDate.month}/{this.props.post.postDate.day}/{this.props.post.postDate.year}</p>
+                        <h2 className="article__title">{this.props.post.title.toUpperCase()}</h2>
+                        <p className="article__date">{dateFormatter(this.props.post.postDate.day, this.props.post.postDate.month, this.props.post.postDate.year)}</p>
                         {this.props.post.postPicture && <img className="article__image" src={this.props.post.postPicture} alt={this.props.post.postPictureName}/>}
                         <div className="article__body" />
                     </article>

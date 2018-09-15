@@ -19,12 +19,15 @@
     &__title {
         border-bottom: 2px solid $blue-med;
         color: $blue-med;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         font-size: $font-size-large;
-        margin: 0 $l-size $l-size;
+        margin: 0 $l-size $m-size $l-size;
     }
     &__date {
-        text-align: right;
+        color: darken($blue-dark, 5%);
+        font-size: 1.8rem;
         margin: 0 $l-size;
+        text-align: right;
     }
     &__image {
         box-sizing: border-box;

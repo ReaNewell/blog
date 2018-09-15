@@ -15,10 +15,17 @@
         color: $blue-dark;
         display: block;
         font-size: 1.8rem;
-        margin: 0 auto;
+        margin: $s-size;
         text-align: center;
         padding: 2rem;
-        width: 100%;
+        width: auto;
+
+        &--active {
+            @extend .admin-sidebar__button;
+
+            background: $blue-dark;
+            color: $white;
+        }
     }
     &__button--logout {
         @extend .admin-sidebar__button;
@@ -26,6 +33,8 @@
         background: none;
         bottom: 0;
         border: none;
+        margin: $s-size 0;
         position: absolute;
+        width: 20rem;
     }
 }

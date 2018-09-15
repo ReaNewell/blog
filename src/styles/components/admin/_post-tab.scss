@@ -1,27 +1,42 @@
 .post-tab {
+    border: 2px solid rgb(232, 232, 232);
     display: grid;
     grid-template-areas:    "title title title title"
                             "date  view  edit  delete";
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: auto auto;
+    max-width: 75rem;
 
     &__title {
+        background: rgb(232, 232, 232);
+        font-size: $font-size-medium;
         grid-area: title;
 
     }
     &__date {
         grid-area: date;
+        margin: $s-size;
+        text-align: center;
 
     }
     &__button {
+        color: $white;
+        background: $blue-med;
+        border-radius: 5px;
+        margin: $s-size;
+        padding: .8rem;
+        text-align: center;
 
         &--edit {
+            @extend .post-tab__button;
             grid-area: edit;
         }
         &--delete {
+            @extend .post-tab__button;
             grid-area: delete;
         }
         &--view {
+            @extend .post-tab__button;
             grid-area: view;
         }
     }

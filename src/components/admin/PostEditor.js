@@ -39,7 +39,6 @@ class PostEditor extends React.Component {
             } else {
                 this.setState(() => ({ error: ""}));
                 this.props.startUpdatePost(this.props.post.id, {title: this.state.title, body: this.state.html}, this.props.post.postPictureName, newPicture);
-                this.props.history.push('/admin/edit-posts');
             }
         } else {
             if (!this.state.html || !this.state.title) {

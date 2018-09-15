@@ -8,7 +8,7 @@ class EditPostPage extends React.Component {
     render() {
         return (
             <div className="dashboard">
-                <AdminSideBar />
+                <AdminSideBar path="edit"/>
                 { this.props.currentPost ? (
                     <div>
                         <h1>Edit Posts</h1>

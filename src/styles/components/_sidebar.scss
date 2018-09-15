@@ -1,5 +1,49 @@
 .sidebar {
-    background: darken($white, 2%);
+    background: darken($white, 3%);
     box-shadow: 5px 0 10px rgba(0, 0, 0, 0.10);
     grid-area: sidebar;
+
+    &__heading {
+        color: darken($blue-dark, 5%);
+        margin: $m-size;
+        text-align: center;
+
+        &--green {
+            @extend .sidebar__heading;
+
+            color: $green-dark;
+        }
+    }
+    &__category {
+        background: $green-med;
+        border-radius: 5px;
+        color: $white;
+        display: block;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-weight: bold;
+        margin: $m-size;
+        padding: $s-size;
+        text-transform: uppercase;
+
+        &:nth-child(odd) {
+            background: $green-dark;
+        }
+    }
+    hr {
+        margin: $s-size;
+    }
+}
+
+.social-media {
+    background: white;
+    display: block;
+    margin: $s-size auto;
+    width: 90%;
+
+    img {
+        display: block;
+        height: 10rem;
+        object-fit: cover;
+        width: 100%;
+    }
 }

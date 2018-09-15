@@ -25,8 +25,8 @@ class PostTab extends React.Component {
             <div className="post-tab">
                 <h3 className="post-tab__title">{this.props.post.title}</h3>
                 <p className="post-tab__date">{this.props.post.postDate.month}/{this.props.post.postDate.day}/{this.props.post.postDate.year}</p>
-                <Link className="post-tab__button--view" to={`/posts/${this.props.post.title}`}>View Post</Link>
-                <Link className="post-tab__button--edit" to={`/admin/edit-posts/${this.props.post.title}`}>Edit Post</Link>
+                <Link className="post-tab__button--view" to={`/posts/${this.props.post.title}`}>View</Link>
+                <Link className="post-tab__button--edit" to={`/admin/edit-posts/${this.props.post.title}`}>Edit</Link>
                 {/* <button className="post-tab__button--delete" onClick={this.openWarning}>Delete Post</button>
                 {this.state.warning && 
                     <div className="warning">

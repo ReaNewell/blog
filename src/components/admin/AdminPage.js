@@ -6,7 +6,7 @@ class AdminPage extends React.Component {
     render() {
         return (
             <div className="dashboard">
-                <AdminSideBar />
+                <AdminSideBar path='create'/>
                 <div className="admin-page">
                     <h1 className="admin-page__title">Admin Page</h1>
                     <h2 className="admin-page__subtitle">Create A Post</h2>

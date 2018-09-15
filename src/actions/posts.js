@@ -125,7 +125,7 @@ export const startUpdatePost = (id, updates, currentPicture, picture) => {
         }).then(() => {
             if (picture) {
                 const fileName = picture.name;
-                const storageRef = storage.ref(`/blogPictures/${fileNmame}`);
+                const storageRef = storage.ref(`/blogPictures/${fileName}`);
                 const uploadTask = storageRef.put(picture);
                 let downloadURL;
 
@@ -148,11 +148,13 @@ export const startUpdatePost = (id, updates, currentPicture, picture) => {
                     // Upload completed successfully, now we can get the download URL
                     console.log('Upload complete.')
                     downloadURL = uploadTask.snapshot.downloadURL;
-                    return database.ref(`post/$}{currentPost}`).update({ 
+                    return database.ref(`posts/${id}`).update({ 
                         postPicture: downloadURL,
                         postPictureName: fileName
                     }).then(() => {
-                        return storage.ref(`/blogPictures/${currentPicture}`).delete();
+                        if (currentPicture && currentPicture !== fileName) {
+                            return storage.ref(`/blogPictures/${currentPicture}`).delete();
+                        }
                     });
                 });
             }
