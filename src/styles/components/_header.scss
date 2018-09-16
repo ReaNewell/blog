@@ -5,12 +5,24 @@
     background-size: cover;
     display: grid;
     grid-template-areas: ". title";
-    grid-template-columns: 1fr 75rem 25rem 1fr;
+    grid-template-columns: $l-size 1fr;
     grid-area: header;
 
     .header__title {
         color: $white;
         font-size: $font-size-xlarge;
         grid-area: title;
+    }
+}
+
+@media (min-width: $small-desktop-breakpoint) {
+    .header {
+        
+    }
+}
+@media (min-width: $desktop-breakpoint) {
+    .header {
+        grid-template-areas: ". title .";
+        grid-template-columns: 1fr 100rem 1fr;
     }
 }

@@ -1,11 +1,12 @@
 .article-page {
     box-sizing: border-box;
     display: grid;
-    grid-template-areas:    "header header   header  header"
-                            ".      article sidebar  .     "
-                            "footer footer   footer  footer";
-    grid-template-rows: 15rem auto 5rem;
-    grid-auto-columns: 1fr 75rem 25rem 1fr;
+    grid-template-areas:    "header"
+                            "article"
+                            "sidebar"
+                            "footer";
+    grid-template-rows: 30rem auto auto 5rem;
+    grid-template-columns: 100vw;
     min-height: 110vh;
     width: 100vw;
 }
@@ -46,5 +47,34 @@
         blockquote {
             text-align: center;
         }
+    }
+}
+
+@media (min-width: $tablet-breakpoint) {
+    .article-page {
+        grid-template-areas:    "header"
+                                "article"
+                                "sidebar"
+                                "footer";
+        grid-template-rows: 30rem auto auto 5rem;
+        grid-template-columns: 100vw;
+    }
+}
+@media (min-width: $small-desktop-breakpoint) {
+    .article-page {
+        grid-template-areas:    "header   header"
+                                "article sidebar"
+                                "footer   footer";
+        grid-template-rows: 30rem auto 5rem;
+        grid-template-columns: 3fr 1fr;
+    }
+}
+@media (min-width: $desktop-breakpoint) {
+    .article-page {
+        grid-template-areas:    "header header   header  header"
+                                ".      article sidebar .     "
+                                "footer footer   footer  footer";
+        grid-template-rows: 30rem auto 5rem;
+        grid-template-columns: 1fr 75rem 25rem 1fr;
     }
 }
