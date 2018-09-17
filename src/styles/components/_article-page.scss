@@ -56,6 +56,21 @@
         }
     }
 }
+.share-buttons {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin: $m-size $m-size $s-size auto;
+    width: 55%;
+
+    &__share-button {
+        background: $purple-light;
+        border-radius: 5px;
+        color: $white;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        padding: $xs-size;
+    }
+}
 
 @media (min-width: $tablet-breakpoint) {
     .article-page {
@@ -95,6 +110,10 @@
             }
         }
     }
+    .share-buttons {
+        margin: $l-size $l-size $s-size auto;
+        width: 38.5%;
+    }
 }
 @media (min-width: $small-desktop-breakpoint) {
     .article-page {
@@ -103,6 +122,9 @@
                                 "footer   footer";
         grid-template-rows: 30rem auto 5rem;
         grid-template-columns: 3fr 1fr;
+    }
+    .share-buttons {
+        width: 38.5%;
     }
 }
 @media (min-width: $desktop-breakpoint) {

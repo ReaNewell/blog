@@ -8,11 +8,11 @@ class SummarizedPost extends React.Component {
     }
     render() {
         return (
-                <Link to={`/posts/${this.props.title.replace(" ", "-")}`}>
+                <Link to={`/posts/${this.props.title.replace(/ /g, "-")}`}>
                     <div className="summarized-post" >
                         { this.props.imagePath && <img className="summarized-post__image" src={this.props.imagePath} alt={this.props.imageName}/>}
                         <h2 className="summarized-post__title">{this.props.title}</h2>
-                        <p className="summarized-post__date">{dateFormatter(this.props.date.day, this.props.date.month, this.props.date.year)}</p>
+                        <p className="summarized-post__date">{`Posted ${dateFormatter(this.props.date.day, this.props.date.month, this.props.date.year)}`}</p>
                     </div>
                 </Link>
         )

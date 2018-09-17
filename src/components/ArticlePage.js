@@ -36,6 +36,12 @@ class ArticlePage extends React.Component {
                         {this.props.post.postPicture && <img className="article__image" src={this.props.post.postPicture} alt={this.props.post.postPictureName}/>}
                         <div className="article__body" />
 
+                        <div className='share-buttons'>
+                            <a className="share-buttons__share-button" href={`http://facebook.com/sharer.php?u=https%3A%2F%2Fblog.reanewell.com/posts/${this.props.post.title.replace(/ /g, "-")}`}>Facebook</a>
+                            <a className="share-buttons__share-button" href={`https://twitter.com/intent/tweet?url=https%3A%2F%2Fblog.reanewell.com/${this.props.post.title.replace(/ /g, "-")}`}>Twitter</a>
+                            <a className="share-buttons__share-button" href={`https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fblog.reanewell.com/${this.props.post.title.replace(/ /g, "-")}&title=${this.props.post.title}`}>LinkedIn</a>
+                        </div>
+
                         <h2 className='article__header'>More Articles</h2>
                         {this.props.moreArticles.map((post) => (
                             <SummarizedPost 
@@ -54,7 +60,7 @@ class ArticlePage extends React.Component {
     }
 }
 const mapStateToProps = (state, props) => {
-    const post = state.posts.find((post) => post.title === props.match.params.title.replace('-', ' '));
+    const post = state.posts.find((post) => post.title === props.match.params.title.replace(/-/g, ' '));
 
     return ({
         post,

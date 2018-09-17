@@ -16,12 +16,14 @@
         margin: $s-size $s-size 0 $s-size;
     }
     &__date {
+        color: $blue-med;
+        font-style: oblique;
         grid-area: date;
         margin: $s-size;
     }
     &__image {
         box-sizing: border-box;
-        border-top: 1px solid darken($white, 10%);
+        // border-top: 1px solid darken($white, 10%);
         color: $black;
         display: block;
         height: 10rem;
