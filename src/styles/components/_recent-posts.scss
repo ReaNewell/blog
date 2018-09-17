@@ -2,14 +2,20 @@
     background: $white;
     box-shadow: -5px 0 10px rgba(0, 0, 0, 0.10);
     grid-area: articles;
-    padding: $l-size 0;
+    padding: $s-size 0;
 
-    .recent-posts__title {
+    &__title {
         border-bottom: 2px solid $blue-med;
         color: $blue-med;
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         font-size: $font-size-large;
-        margin: 0 $l-size $l-size;
+        margin: 0 $s-size $s-size;
         text-transform: uppercase;
+    }
+}
+
+@media (min-width: $tablet-breakpoint) {
+    .recent-posts__title {
+        margin: 0 $l-size $l-size;
     }
 }

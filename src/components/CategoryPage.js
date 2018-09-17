@@ -8,6 +8,12 @@ import SideBar from './SideBar';
 import CategoryPosts from './CategoryPosts';
 
 class CategoryPage extends React.Component {
+    componentDidMount = () => {
+        window.scroll(0, 0);
+    }
+    componentDidUpdate = () => {
+        window.scroll(0, 0);
+    }
     render() {
         return(
             <div className="homepage">

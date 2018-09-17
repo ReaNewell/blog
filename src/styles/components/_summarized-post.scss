@@ -3,32 +3,53 @@
     box-shadow: $box-shadow;
     box-sizing: border-box;
     display: grid;
-    grid-template-areas:    "image image"
-                            "title date";
-    grid-template-columns: 3fr 1fr;
-    grid-template-rows: auto auto;
-    margin: 0 $l-size $l-size $l-size;
+    grid-template-areas:    "image"
+                            "title"
+                            "date";
+    margin: 0 $s-size $m-size $s-size;
     width: auto;
 
-    .summarized-post__title {
+    &__title {
         color: $blue-dark;
-        font-size: $font-size-medium;
+        font-size: 2rem;
         grid-area: title;
-        margin: $s-size;
+        margin: $s-size $s-size 0 $s-size;
     }
-    .summarized-post__date {
+    &__date {
         grid-area: date;
         margin: $s-size;
-        text-align: right;
     }
-    .summarized-post__image {
+    &__image {
         box-sizing: border-box;
         border-top: 1px solid darken($white, 10%);
         color: $black;
         display: block;
-        height: 15rem;
+        height: 10rem;
         grid-area: image;
         object-fit: cover;
         width: 100%;
+    }
+}
+
+@media (min-width: $tablet-breakpoint) {
+    .summarized-post {
+        grid-template-areas:    "image image"
+                                "title date";
+        grid-template-columns: 3fr 1fr;
+        grid-template-rows: auto auto;
+        margin: 0 $l-size $l-size $l-size;
+
+        &__title {
+            font-size: $font-size-medium;
+            margin: $s-size;
+        }
+        &__date {
+            margin: $s-size;
+            text-align: right;
+        }
+        &__image {
+            border-top: 1px solid darken($white, 10%);
+            height: 15rem;
+        }
     }
 }

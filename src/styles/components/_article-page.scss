@@ -15,37 +15,44 @@
     background: $white;
     box-shadow: -5px 0 10px rgba(0, 0, 0, 0.10);
     grid-area: article;
-    padding: $l-size 0;
+    padding: $m-size 0;
 
     &__title {
         border-bottom: 2px solid $blue-med;
         color: $blue-med;
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        font-size: $font-size-large;
-        margin: 0 $l-size $m-size $l-size;
+        font-size: 2.6rem;
+        margin: 0 $s-size $s-size $s-size;
     }
     &__date {
         color: darken($blue-dark, 5%);
         font-size: 1.8rem;
-        margin: 0 $l-size;
+        margin: 0 $s-size;
         text-align: right;
     }
     &__image {
         box-sizing: border-box;
         display: block;
-        padding: $l-size;
+        padding: $s-size;
         width: 100%;
     }
+    &__header {
+        @extend .article__title;
+
+        margin: $s-size;
+    }
     .article__body {
-        margin: 0 $l-size;
+        margin: 0 $s-size;
+        text-indent: $l-size;
 
         h1 {
             font-size: $font-size-medium;
-            text-align: center;
-            margin: 1rem;
+            margin: 1rem 0;
+            text-indent: 0;
         }
         blockquote {
             text-align: center;
+            text-indent: 0;
         }
     }
 }
@@ -58,6 +65,35 @@
                                 "footer";
         grid-template-rows: 30rem auto auto 5rem;
         grid-template-columns: 100vw;
+    }
+    .article {
+        padding: $l-size 0;
+
+        &__title {
+            font-size: $font-size-large;
+            margin: 0 $l-size $m-size $l-size;
+        }
+        &__date {
+            font-size: 1.8rem;
+            margin: 0 $l-size;
+        }
+        &__image {
+            padding: $l-size;
+        }
+        &__header {
+            margin: $m-size $l-size;
+        }
+        .article__body {
+            margin: 0 $l-size;
+
+            h1 {
+                text-align: center;
+                margin: 1rem;
+            }
+            blockquote {
+                text-align: center;
+            }
+        }
     }
 }
 @media (min-width: $small-desktop-breakpoint) {
