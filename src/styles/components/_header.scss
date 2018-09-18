@@ -5,20 +5,20 @@
     background-size: cover;
     display: grid;
     grid-template-areas: ". title";
-    grid-template-columns: $l-size 1fr;
+    grid-template-columns: 0 1fr;
     grid-area: header;
 
     .header__title {
+        align-items: center;
         color: $white;
+        display: flex;
         font-size: $font-size-xlarge;
         grid-area: title;
     }
 }
 
 @media (min-width: $small-desktop-breakpoint) {
-    .header {
-        
-    }
+    
 }
 @media (min-width: $desktop-breakpoint) {
     .header {

@@ -1,7 +1,5 @@
 const path = require('path');
 const webpack = require('webpack');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';
@@ -18,16 +16,6 @@ module.exports = (env) => {
 
     return {
         mode: process.env.NODE_ENV,
-        // optimization: {
-        //     minimizer: [
-        //         new UglifyJsPlugin({
-        //             cache: true,
-        //             parallel: true,
-        //             sourceMap: true
-        //         }),
-        //         new OptimizeCSSAssetsPlugin({})
-        //     ]
-        // },
         entry: ['babel-polyfill', './src/app.js'],
         output: {
             path: path.join(__dirname, 'public', 'dist'),
@@ -54,6 +42,10 @@ module.exports = (env) => {
                         }
                     }
                 ]
+            }, {
+                test: /\.(jpe?g|png)$/,
+                loader: 'image-webpack-loader',
+                enforce: 'pre'
             }]
         },
         plugins: [

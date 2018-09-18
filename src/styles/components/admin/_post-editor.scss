@@ -4,7 +4,7 @@
     max-width: 75rem;
     padding: $m-size;
 
-    .post-editor__title-input {
+    &__title-input {
         border: none;
         border-bottom: 2px solid darken($white, 5%);
         font-size: $font-size-medium;
@@ -17,8 +17,24 @@
             border-bottom: 2px solid $blue-light;
         }
     }
-    .post-editor__button {
+    &__button {
         padding: $s-size;
+    }
+    &__image-input {
+        height: 0.1px;
+        opacity: 0;
+        overflow: hidden;
+        position: absolute;
+        z-index: -1;
+        width: 0.1px;
+
+        & + label {
+            background: $green-med;
+            color: white;
+            display: block;
+            font-size: $font-size-medium;
+            padding: $xs-size;
+        }
     }
 }
 

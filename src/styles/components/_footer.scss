@@ -1,4 +1,11 @@
 .footer {
+    align-items: center;
     background: $blue-light;
+    display: flex;
     grid-area: footer;
+    justify-content: center;
+
+    & img {
+        height: 4.5rem;
+    }
 }

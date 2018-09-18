@@ -11,7 +11,6 @@ export const PublicRoute = ({ isAuthenticated, component: Component, hasProfileI
         )
     )}/>
 );
-
 const mapStateToProps = (state) => ({
     isAuthenticated: !!state.auth.uid
 });

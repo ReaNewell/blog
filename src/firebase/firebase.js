@@ -19,4 +19,4 @@ const database = firebase.database();
 const storage = firebase.storage();
 const auth = firebase.auth();
 
-export { firebase, auth, database as default, storage};
+export {firebase, auth, database as default, storage};

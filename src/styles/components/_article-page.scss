@@ -54,21 +54,33 @@
             text-align: center;
             text-indent: 0;
         }
+        img {
+            display: block;
+            width: 100%;
+        }
+        pre {
+            background: $green-med;
+            border: 2px solid $green-dark;
+            border-radius: 5px;
+            color: $black;
+            padding: $xs-size 0;
+        }
     }
 }
 .share-buttons {
     align-items: center;
     display: flex;
-    justify-content: space-between;
-    margin: $m-size $m-size $s-size auto;
-    width: 55%;
+    justify-content: flex-end;
+    margin: $xs-size 0 $xs-size auto;
+    width: 100%;
 
     &__share-button {
         background: $purple-light;
         border-radius: 5px;
         color: $white;
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        padding: $xs-size;
+        margin: 0 $s-size 0 $xs-size;
+        padding: .5rem;
     }
 }
 
@@ -111,8 +123,11 @@
         }
     }
     .share-buttons {
-        margin: $l-size $l-size $s-size auto;
-        width: 38.5%;
+        margin: $m-size 0 $s-size auto;
+
+        &--button {
+            padding: $xs-size;
+        }
     }
 }
 @media (min-width: $small-desktop-breakpoint) {
@@ -122,9 +137,6 @@
                                 "footer   footer";
         grid-template-rows: 30rem auto 5rem;
         grid-template-columns: 3fr 1fr;
-    }
-    .share-buttons {
-        width: 38.5%;
     }
 }
 @media (min-width: $desktop-breakpoint) {

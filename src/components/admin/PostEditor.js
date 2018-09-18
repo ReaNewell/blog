@@ -19,7 +19,7 @@ class PostEditor extends React.Component {
         this.editor = init({
             element: document.getElementById('editor'),
             onChange: html => this.setState({ html }),
-            actions: ['bold', 'underline', 'italic', 'heading1', 'heading2', 'quote', 'code']
+            actions: ['bold', 'underline', 'italic', 'heading1', 'heading2', 'quote', 'code', 'image']
         })
         if (this.state.updating) {
             this.editor.content.innerHTML = this.state.html;
@@ -49,7 +49,7 @@ class PostEditor extends React.Component {
                     title: this.state.title,
                     body: this.state.html
                 }, newPicture);
-                this.setState(() => ({ title: ""}));
+                this.setState(() => ({ title: ""})); 
                 this.setState(() => ({ html: ""}));
             }
         }
@@ -61,8 +61,12 @@ class PostEditor extends React.Component {
                 <div id="editor" className="pell" />
                 <input 
                     accept='.jpg, .jpeg' 
-                    className="post-editor__image-input" 
-                    type='file'/>
+                    className="post-editor__image-input"
+                    id='image'
+                    name='image'
+                    type='file'
+                />
+                <label htmlFor='image'>Add Header Image</label>
                 <button className="post-editor__button" onClick={this.submitPost}>Submit Post</button>
             </div>
         )
