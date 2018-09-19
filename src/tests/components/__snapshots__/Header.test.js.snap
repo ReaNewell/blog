@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render Header component correctly 1`] = `
+<header
+  className="header"
+>
+  <Link
+    className="header__title"
+    replace={false}
+    to="/"
+  >
+    <img
+      alt="page logo"
+      className="logo"
+      src="/images/rea-logo.png"
+    />
+    Rea's Dev Journey
+  </Link>
+</header>
+`;

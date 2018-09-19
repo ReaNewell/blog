@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render CategoryPage component correctly 1`] = `
+<div
+  className="homepage"
+>
+  <Header />
+  <CategoryPosts
+    category="html"
+    posts={
+      Array [
+        Object {
+          "body": "This is the first blog post.",
+          "categories": Array [
+            "css",
+            "html",
+          ],
+          "id": "123",
+          "postDate": Object {
+            "day": 1,
+            "month": 2,
+            "year": 2017,
+          },
+          "postPicture": "postPicture",
+          "postPictureName": "postPictureName",
+          "title": "Title One",
+        },
+        Object {
+          "body": "This is the first blog post.",
+          "categories": Array [
+            "javascript",
+            "html",
+          ],
+          "id": "221",
+          "postDate": Object {
+            "day": 1,
+            "month": 4,
+            "year": 2018,
+          },
+          "postPicture": "postPictureNumberTwo",
+          "postPictureName": "postPictureNameNumberTwo",
+          "title": "Title One",
+        },
+      ]
+    }
+  />
+  <Connect(SideBar) />
+  <Footer />
+</div>
+`;

@@ -7,7 +7,7 @@ import { Header } from './Header';
 import SideBar from './SideBar';
 import CategoryPosts from './CategoryPosts';
 
-class CategoryPage extends React.Component {
+export class CategoryPage extends React.Component {
     componentDidMount = () => {
         window.scroll(0, 0);
     }

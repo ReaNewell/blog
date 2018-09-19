@@ -1,0 +1,83 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render SideBar component correctly 1`] = `
+<div
+  className="sidebar"
+>
+  <h3
+    className="sidebar__heading"
+  >
+    Find me online!
+  </h3>
+  <a
+    className="social-media"
+    href="https://www.reanewell.com"
+    target="_blank"
+  >
+    <img
+      alt="My Portfolio"
+      src="/images/portfolio.png"
+    />
+  </a>
+  <a
+    className="social-media"
+    href="https://instagram.com/rea.webdev"
+    target="_blank"
+  >
+    <img
+      alt="instagram logo"
+      src="/images/instagram.jpg"
+    />
+  </a>
+  <a
+    className="social-media"
+    href="https://codepen.io/reanewell/"
+    target="_blank"
+  >
+    <img
+      alt="codepen logo"
+      src="/images/codepen.png"
+    />
+  </a>
+  <a
+    className="social-media"
+    href="https://twitter.com/ReaNewell"
+    target="_blank"
+  >
+    <img
+      alt="twitter logo"
+      src="/images/twitter.jpg"
+    />
+  </a>
+  <hr />
+  <h3
+    className="sidebar__heading--green"
+  >
+    Categories
+  </h3>
+  <Link
+    className="sidebar__category"
+    key="0"
+    replace={false}
+    to="/categories/html"
+  >
+    html
+  </Link>
+  <Link
+    className="sidebar__category"
+    key="1"
+    replace={false}
+    to="/categories/css"
+  >
+    css
+  </Link>
+  <Link
+    className="sidebar__category"
+    key="2"
+    replace={false}
+    to="/categories/javascript"
+  >
+    javascript
+  </Link>
+</div>
+`;

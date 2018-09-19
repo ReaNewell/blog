@@ -1,0 +1,86 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render ArticlePage component correctly 1`] = `
+<div
+  className="article-page"
+>
+  <Header />
+  <article
+    className="article"
+  >
+    <h2
+      className="article__title"
+    >
+      TITLE ONE
+    </h2>
+    <p
+      className="article__date"
+    >
+      March 1, 2017
+    </p>
+    <img
+      alt="postPictureName"
+      className="article__image"
+      src="postPicture"
+    />
+    <div
+      className="article__body"
+    />
+    <div
+      className="share-buttons"
+    >
+      <a
+        className="share-buttons__share-button"
+        href="http://facebook.com/sharer.php?u=https%3A%2F%2Fblog.reanewell.com/posts/Title-One"
+      >
+        Facebook
+      </a>
+      <a
+        className="share-buttons__share-button"
+        href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fblog.reanewell.com/Title-One"
+      >
+        Twitter
+      </a>
+      <a
+        className="share-buttons__share-button"
+        href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fblog.reanewell.com/Title-One&title=Title One"
+      >
+        LinkedIn
+      </a>
+    </div>
+    <h2
+      className="article__header"
+    >
+      More Articles
+    </h2>
+    <SummarizedPost
+      date={
+        Object {
+          "day": 1,
+          "month": 2,
+          "year": 2017,
+        }
+      }
+      imageName="postPictureName"
+      imagePath="postPicture"
+      key="123"
+      title="Title One"
+    />
+    <SummarizedPost
+      date={
+        Object {
+          "day": 1,
+          "month": 4,
+          "year": 2018,
+        }
+      }
+      imageName="postPictureNameNumberTwo"
+      imagePath="postPictureNumberTwo"
+      key="221"
+      title="Title One"
+    />
+  </article>
+  <Connect(SideBar) />
+  <Footer />
+</div>
+`;

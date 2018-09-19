@@ -4,18 +4,9 @@ exports[`should render homepage correctly 1`] = `
 <div
   className="homepage"
 >
-  <TopBar />
-  <div
-    className="homepage__plantcards"
-    onClick={null}
-  />
-  <PlantForm
-    error={false}
-    formActive={false}
-    handleActivate={[Function]}
-    name=""
-    onNameChange={[Function]}
-    onSubmit={[Function]}
-  />
+  <Header />
+  <Connect(RecentPosts) />
+  <Connect(SideBar) />
+  <Footer />
 </div>
 `;

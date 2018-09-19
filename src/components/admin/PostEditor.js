@@ -19,7 +19,7 @@ class PostEditor extends React.Component {
         this.editor = init({
             element: document.getElementById('editor'),
             onChange: html => this.setState({ html }),
-            actions: ['bold', 'underline', 'italic', 'heading1', 'heading2', 'quote', 'code', 'image']
+            actions: ['bold', 'underline', 'italic', 'heading1', 'heading2', 'quote', 'image', 'code']
         })
         if (this.state.updating) {
             this.editor.content.innerHTML = this.state.html;

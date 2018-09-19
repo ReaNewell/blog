@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render RecentPosts component correctly 1`] = `
+<div
+  className="recent-posts"
+>
+  <h2
+    className="recent-posts__title"
+  >
+    Recent Articles
+  </h2>
+  <SummarizedPost
+    key="221"
+    post={
+      Object {
+        "body": "This is the first blog post.",
+        "categories": Array [
+          "javascript",
+          "html",
+        ],
+        "id": "221",
+        "postDate": Object {
+          "day": 1,
+          "month": 4,
+          "year": 2018,
+        },
+        "postPicture": "postPictureNumberTwo",
+        "postPictureName": "postPictureNameNumberTwo",
+        "title": "Title One",
+      }
+    }
+  />
+  <SummarizedPost
+    key="123"
+    post={
+      Object {
+        "body": "This is the first blog post.",
+        "categories": Array [
+          "css",
+          "html",
+        ],
+        "id": "123",
+        "postDate": Object {
+          "day": 1,
+          "month": 2,
+          "year": 2017,
+        },
+        "postPicture": "postPicture",
+        "postPictureName": "postPictureName",
+        "title": "Title One",
+      }
+    }
+  />
+</div>
+`;

@@ -8,7 +8,7 @@ import SideBar from './SideBar';
 import moreArticles from '../selectors/moreArticles';
 import dateFormatter from '../tools/dateFormatter';
 
-class ArticlePage extends React.Component {
+export class ArticlePage extends React.Component {
     constructor(props) {
         super(props);
 

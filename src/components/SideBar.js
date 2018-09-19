@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import categoriesSelector from '../selectors/categories';
 
-class SideBar extends React.Component {
+export class SideBar extends React.Component {
     render() {
         return (
             <div className="sidebar">

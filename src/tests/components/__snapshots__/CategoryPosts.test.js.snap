@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render CategoryPosts component correctly 1`] = `
+<div
+  className="recent-posts"
+>
+  <h2
+    className="recent-posts__title"
+  >
+    Articles Related To undefined
+  </h2>
+  <SummarizedPost
+    date={
+      Object {
+        "day": 1,
+        "month": 4,
+        "year": 2018,
+      }
+    }
+    imageName="postPictureNameNumberTwo"
+    imagePath="postPictureNumberTwo"
+    key="221"
+    title="Title One"
+  />
+  <SummarizedPost
+    date={
+      Object {
+        "day": 1,
+        "month": 2,
+        "year": 2017,
+      }
+    }
+    imageName="postPictureName"
+    imagePath="postPicture"
+    key="123"
+    title="Title One"
+  />
+</div>
+`;

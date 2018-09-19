@@ -2,7 +2,7 @@ import React from 'react';
 import SummarizedPost from './SummarizedPost';
 import sortReverseChronological from '../selectors/sortReverseChronological';
 
-class CategoryPosts extends React.Component {
+export class CategoryPosts extends React.Component {
     render() {
         return (
             <div className="recent-posts">

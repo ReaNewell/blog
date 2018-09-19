@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render SummarizedPost component correctly 1`] = `
+<Link
+  replace={false}
+  to="/posts/Title-One"
+>
+  <div
+    className="summarized-post"
+  >
+    <h2
+      className="summarized-post__title"
+    >
+      Title One
+    </h2>
+    <p
+      className="summarized-post__date"
+    >
+      Posted May 1, 2018
+    </p>
+  </div>
+</Link>
+`;
