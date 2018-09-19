@@ -1,13 +1,14 @@
 import database from '../firebase/firebase';
 import { firebase, storage } from '../firebase/firebase';
 
-export const addPost = ({id, title, body, postDate}) => ({
+export const addPost = ({id, title, body, postDate, categories}) => ({
     type: "ADD_POST",
     post: {
         id,
         title,
         body,
-        postDate
+        postDate,
+        categories
     }
 });
 export const startAddPost = (postData = {}, image) => {
@@ -20,9 +21,10 @@ export const startAddPost = (postData = {}, image) => {
                 day: new Date().getDate(),
                 month: new Date().getMonth(),
                 year: new Date().getFullYear()
-            }
+            },
+            categories = []
         } = postData;
-        const post = { title, body, postDate };
+        const post = { title, body, postDate, categories };
 
         return database.ref(`posts`).push(post).then((ref) => {
             dispatch(addPost({
