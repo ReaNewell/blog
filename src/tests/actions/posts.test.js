@@ -20,10 +20,16 @@ const createMockStore = configureMockStore([thunk]);
 
 beforeEach((done) => {
     const postsData = {};
+    let image = new File(["test-image"], "test-image.png");
     posts.forEach(({ id, title, body, postDate, categories, postPicture, postPictureName }) => {
         postsData[id] = { title, body, postDate, categories, postPicture, postPictureName };
     });
-    database.ref(`/posts`).set(postsData).then(() => done());
+    database.ref(`/posts`).set(postsData).then(() => {
+        storage.ref(`blogPictures/${image.name}`).put(image);
+        setInterval(() => {
+            done();
+        });
+    });
 });
 
 // ADDING POSTS
@@ -89,6 +95,75 @@ test('should add post to database and store with picture', (done) => {
         expect(snapshot.val()).toEqual(postData);
         setTimeout(() => {
             done();
-        }, 1000);
+        }, 500);
+    });
+});
+
+
+// REMOVING POSTS
+test('should setup removePost action object', () => {
+    const id = posts[0].id;
+    const action = (removePost(id));
+    expect(action).toEqual({ type: "REMOVE_POST", id });
+});
+test('should delete post from database and store', (done) => {
+    const store = createMockStore(defaultAuthState);
+    const id = posts[0].id;
+
+    store.dispatch(startRemovePost(id)).then(() => {
+        const actions = store.getActions();
+        expect(actions[0]).toEqual({ type: 'REMOVE_POST', id });
+        return database.ref(`posts/${id}`).once('value');
+    }).then((snapshot) => {
+        expect(snapshot.val()).toBeFalsy();
+        done();
+    });
+});
+
+
+// SETTING POSTS
+test('should setup setPosts action object', () => {
+    const action = (setPosts(posts));
+    expect(action).toEqual({ type: 'SET_POSTS', posts });
+});
+test('should fetch posts data from firebase', (done) => {
+    const store = createMockStore(defaultAuthState);
+
+    store.dispatch(startSetPosts()).then(() => {
+        const actions = store.getActions();
+        expect(actions[0]).toEqual({ type: 'SET_POSTS', posts });
+        setTimeout(() => {
+            done();
+        }, 500);
+    })
+});
+
+
+// UPDATING POSTS
+test('should setup updatePost action object', () => {
+    const updates = {
+        title: 'All About CSS',
+        body: 'This is the test post body.'
+    };
+    const action = updatePost(posts[1].id, updates);
+    expect(action).toEqual({ type: 'UPDATE_POST', id: posts[1].id, updates });
+});
+test('should update post data in database and store', () => {
+    const store = createMockStore(defaultAuthState);
+    const updates = {
+        title: 'All About CSS',
+        body: 'This is the test post body.'
+    };
+
+    store.dispatch(startUpdatePost(posts[1].id, updates)).then((done) => {
+        const actions = store.getActions();
+        expect(actions[0]).toEqual({ type: 'UPDATE_POST', updates });
+        return database.ref(`posts/${posts[1].id}`).once('value');
+    }).then((snapshot) => {
+        expect(snapshot.val()).toEqual({
+            ...posts[1],
+            ...updates
+        });
+        done();
     });
 });

@@ -77,8 +77,6 @@ export const startRemovePost = (id, imageName) => {
         return database.ref(`posts/${id}`).remove().then(() => {
             dispatch(removePost(id));
         }).then(() => {
-            console.log('Trying to delete image');
-            console.log(imageName);
             if (imageName) {
                 const storageRef = storage.ref(`blogPictures/${imageName}`);
                 storageRef.delete().then(() => {
