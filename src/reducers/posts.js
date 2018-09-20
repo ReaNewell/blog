@@ -22,4 +22,4 @@ export default (state = defaultPostsReducerState, action) => {
         default:
             return state;
     }
-}
+};
