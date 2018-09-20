@@ -3,7 +3,7 @@
 exports[`should render SummarizedPost component correctly 1`] = `
 <Link
   replace={false}
-  to="/posts/Title-One"
+  to="/posts/Title-Two"
 >
   <div
     className="summarized-post"
@@ -11,7 +11,7 @@ exports[`should render SummarizedPost component correctly 1`] = `
     <h2
       className="summarized-post__title"
     >
-      Title One
+      Title Two
     </h2>
     <p
       className="summarized-post__date"

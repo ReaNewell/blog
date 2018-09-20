@@ -22,7 +22,7 @@ test('should add a post', () => {
 test('should remove a post', () => {
     const action = { type: 'REMOVE_POST', id: posts[1].id };
     const state = postsReducer(posts, action);
-    expect(state).toEqual([posts[0]]);
+    expect(state).toEqual([posts[0], posts[2], posts[3]]);
 });
 
 test('should set posts', () => {

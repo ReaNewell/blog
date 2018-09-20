@@ -2,9 +2,7 @@ import sortReverseChronological from './sortReverseChronological';
 
 export default (posts, id, category) => {
     const articles = sortReverseChronological(posts);
-    let moreArticles = [];    
-
-    console.log(articles);
+    let moreArticles = [];
 
     if (category) {
         for (let i = 0; i<articles.length; i++) {

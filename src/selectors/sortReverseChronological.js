@@ -1,5 +1,5 @@
 export default (posts) => {
-    return posts.sort((a, b) => {
+    return posts.slice(0).sort((a, b) => {
         if (a.postDate.year < b.postDate.year) {
             return 1;
         } else if (a.postDate.year > b.postDate.year) { 

@@ -77,7 +77,33 @@ exports[`should render ArticlePage component correctly 1`] = `
       imageName="postPictureNameNumberTwo"
       imagePath="postPictureNumberTwo"
       key="221"
-      title="Title One"
+      title="Title Two"
+    />
+    <SummarizedPost
+      date={
+        Object {
+          "day": 5,
+          "month": 9,
+          "year": 2018,
+        }
+      }
+      imageName="postPictureNameNumberThree"
+      imagePath="postPictureNumberThree"
+      key="421"
+      title="Title Three"
+    />
+    <SummarizedPost
+      date={
+        Object {
+          "day": 27,
+          "month": 3,
+          "year": 2017,
+        }
+      }
+      imageName="postPictureNameNumberFour"
+      imagePath="postPictureNumberFour"
+      key="522"
+      title="Title Four"
     />
   </article>
   <Connect(SideBar) />

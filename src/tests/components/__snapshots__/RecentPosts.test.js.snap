@@ -10,10 +10,31 @@ exports[`should render RecentPosts component correctly 1`] = `
     Recent Articles
   </h2>
   <SummarizedPost
+    key="421"
+    post={
+      Object {
+        "body": "This is the third blog post.",
+        "categories": Array [
+          "react",
+          "javascript",
+        ],
+        "id": "421",
+        "postDate": Object {
+          "day": 5,
+          "month": 9,
+          "year": 2018,
+        },
+        "postPicture": "postPictureNumberThree",
+        "postPictureName": "postPictureNameNumberThree",
+        "title": "Title Three",
+      }
+    }
+  />
+  <SummarizedPost
     key="221"
     post={
       Object {
-        "body": "This is the first blog post.",
+        "body": "This is the second blog post.",
         "categories": Array [
           "javascript",
           "html",
@@ -26,7 +47,28 @@ exports[`should render RecentPosts component correctly 1`] = `
         },
         "postPicture": "postPictureNumberTwo",
         "postPictureName": "postPictureNameNumberTwo",
-        "title": "Title One",
+        "title": "Title Two",
+      }
+    }
+  />
+  <SummarizedPost
+    key="522"
+    post={
+      Object {
+        "body": "This is the fourth blog post.",
+        "categories": Array [
+          "ruby",
+          "python",
+        ],
+        "id": "522",
+        "postDate": Object {
+          "day": 27,
+          "month": 3,
+          "year": 2017,
+        },
+        "postPicture": "postPictureNumberFour",
+        "postPictureName": "postPictureNameNumberFour",
+        "title": "Title Four",
       }
     }
   />
