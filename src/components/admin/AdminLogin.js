@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { startLogin } from '../../actions/auth';
 
-class AdminLogin extends React.Component {
+export class AdminLogin extends React.Component {
     constructor(props) {
         super(props);
 

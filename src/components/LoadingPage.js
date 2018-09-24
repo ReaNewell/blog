@@ -1,5 +1,7 @@
 import React from 'react';
 
 export const LoadingPage = () => (
-    <div>Loading...</div>
+    <div className='loading-page'>
+        <div className='loading-page__logo'/>
+    </div>
 )

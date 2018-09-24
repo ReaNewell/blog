@@ -4,7 +4,7 @@ import AdminSideBar from './AdminSideBar';
 import PostEditor from './PostEditor';
 import PostTab from './PostTab';
 
-class EditPostPage extends React.Component {
+export class EditPostPage extends React.Component {
     render() {
         return (
             <div className="dashboard">

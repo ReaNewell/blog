@@ -1,0 +1,150 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render EditPostPage component correctly when current post is not selected 1`] = `
+<div
+  className="dashboard"
+>
+  <AdminSideBar
+    path="edit"
+  />
+  <div
+    className="admin-page"
+  >
+    <h1
+      className="admin-page__title"
+    >
+      Edit Posts
+    </h1>
+    <h2
+      className="admin-page__subtitle"
+    >
+      Posted Articles
+    </h2>
+    <div>
+      <Connect(PostTab)
+        key="123"
+        post={
+          Object {
+            "body": "This is the first blog post.",
+            "categories": Array [
+              "css",
+              "html",
+            ],
+            "id": "123",
+            "postDate": Object {
+              "day": 1,
+              "month": 2,
+              "year": 2017,
+            },
+            "postPicture": "postPicture",
+            "postPictureName": "postPictureName",
+            "title": "Title One",
+          }
+        }
+      />
+      <Connect(PostTab)
+        key="221"
+        post={
+          Object {
+            "body": "This is the second blog post.",
+            "categories": Array [
+              "javascript",
+              "html",
+            ],
+            "id": "221",
+            "postDate": Object {
+              "day": 1,
+              "month": 4,
+              "year": 2018,
+            },
+            "postPicture": "postPictureNumberTwo",
+            "postPictureName": "postPictureNameNumberTwo",
+            "title": "Title Two",
+          }
+        }
+      />
+      <Connect(PostTab)
+        key="421"
+        post={
+          Object {
+            "body": "This is the third blog post.",
+            "categories": Array [
+              "react",
+              "javascript",
+            ],
+            "id": "421",
+            "postDate": Object {
+              "day": 5,
+              "month": 9,
+              "year": 2018,
+            },
+            "postPicture": "postPictureNumberThree",
+            "postPictureName": "postPictureNameNumberThree",
+            "title": "Title Three",
+          }
+        }
+      />
+      <Connect(PostTab)
+        key="522"
+        post={
+          Object {
+            "body": "This is the fourth blog post.",
+            "categories": Array [
+              "ruby",
+              "python",
+            ],
+            "id": "522",
+            "postDate": Object {
+              "day": 27,
+              "month": 3,
+              "year": 2017,
+            },
+            "postPicture": "postPictureNumberFour",
+            "postPictureName": "postPictureNameNumberFour",
+            "title": "Title Four",
+          }
+        }
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`should render EditPostPage component correctly when current post is selected 1`] = `
+<div
+  className="dashboard"
+>
+  <AdminSideBar
+    path="edit"
+  />
+  <div>
+    <h1>
+      Edit Posts
+    </h1>
+    <h2>
+      Make changes to article, then save.
+    </h2>
+    <Connect(PostEditor)
+      post={
+        Object {
+          "body": "This is the second blog post.",
+          "categories": Array [
+            "javascript",
+            "html",
+          ],
+          "id": "221",
+          "postDate": Object {
+            "day": 1,
+            "month": 4,
+            "year": 2018,
+          },
+          "postPicture": "postPictureNumberTwo",
+          "postPictureName": "postPictureNameNumberTwo",
+          "title": "Title Two",
+        }
+      }
+      updating={true}
+    />
+  </div>
+</div>
+`;

@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render AdminPage component correctly 1`] = `
+<div
+  className="dashboard"
+>
+  <AdminSideBar
+    path="create"
+  />
+  <div
+    className="admin-page"
+  >
+    <h1
+      className="admin-page__title"
+    >
+      Admin Page
+    </h1>
+    <h2
+      className="admin-page__subtitle"
+    >
+      Create A Post
+    </h2>
+    <Connect(PostEditor) />
+  </div>
+</div>
+`;

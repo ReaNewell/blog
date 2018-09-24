@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render AdminSideBar component correctly on create page 1`] = `
+<div
+  className="admin-sidebar"
+>
+  <h3
+    className="admin-sidebar__welcome"
+  >
+    Hello, Rea
+  </h3>
+  <Link
+    className="admin-sidebar__button--active"
+    replace={false}
+    to="/admin"
+  >
+    Create Post
+  </Link>
+  <Link
+    className="admin-sidebar__button"
+    replace={false}
+    to="/admin/edit-posts"
+  >
+    Edit Posts
+  </Link>
+  <Link
+    className="admin-sidebar__button"
+    replace={false}
+    to="/admin/settings"
+  >
+    Settings
+  </Link>
+  <button
+    className="admin-sidebar__button--logout"
+  >
+    Logout
+  </button>
+</div>
+`;
+
+exports[`should render AdminSideBar component correctly on edit page 1`] = `
+<div
+  className="admin-sidebar"
+>
+  <h3
+    className="admin-sidebar__welcome"
+  >
+    Hello, Rea
+  </h3>
+  <Link
+    className="admin-sidebar__button"
+    replace={false}
+    to="/admin"
+  >
+    Create Post
+  </Link>
+  <Link
+    className="admin-sidebar__button--active"
+    replace={false}
+    to="/admin/edit-posts"
+  >
+    Edit Posts
+  </Link>
+  <Link
+    className="admin-sidebar__button"
+    replace={false}
+    to="/admin/settings"
+  >
+    Settings
+  </Link>
+  <button
+    className="admin-sidebar__button--logout"
+  >
+    Logout
+  </button>
+</div>
+`;

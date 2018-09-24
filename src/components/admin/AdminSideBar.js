@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-class AdminSideBar extends React.Component {
+export class AdminSideBar extends React.Component {
     chooseActiveButton = (buttonPath) => {
         return this.props.path == buttonPath ? "admin-sidebar__button--active" : "admin-sidebar__button";
     }

@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render PostEditor component correctly with default values 1`] = `
+<div
+  className="post-editor"
+>
+  <input
+    className="post-editor__title-input"
+    onChange={[Function]}
+    placeholder="Article Title"
+    type="text"
+  />
+  <div
+    className="pell"
+    id="editor"
+  />
+  <input
+    accept=".jpg, .jpeg"
+    className="post-editor__image-input"
+    id="image"
+    name="image"
+    type="file"
+  />
+  <label
+    htmlFor="image"
+  >
+    Add Header Image
+  </label>
+  <button
+    className="post-editor__button"
+    onClick={[Function]}
+  >
+    Submit Post
+  </button>
+  <p />
+</div>
+`;
+
+exports[`should render PostEditor component correctly with given values 1`] = `
+<div
+  className="post-editor"
+>
+  <input
+    className="post-editor__title-input"
+    onChange={[Function]}
+    placeholder="Article Title"
+    type="text"
+  />
+  <div
+    className="pell"
+    id="editor"
+  />
+  <input
+    accept=".jpg, .jpeg"
+    className="post-editor__image-input"
+    id="image"
+    name="image"
+    type="file"
+  />
+  <label
+    htmlFor="image"
+  >
+    Add Header Image
+  </label>
+  <button
+    className="post-editor__button"
+    onClick={[Function]}
+  >
+    Submit Post
+  </button>
+  <p />
+</div>
+`;

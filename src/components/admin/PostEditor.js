@@ -2,9 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { startAddPost, startUpdatePost } from '../../actions/posts';
 import { init } from 'pell';
-import 'pell/dist/pell.css';
 
-class PostEditor extends React.Component {
+export class PostEditor extends React.Component {
     constructor(props) {
         super(props);
 
@@ -31,7 +30,11 @@ class PostEditor extends React.Component {
         this.setState(() => ({ title }));
     }
     submitPost = () => {
-        const newPicture = document.getElementsByClassName('post-editor__image-input')[0].files[0];
+        let newPicture
+
+        if (document.getElementsByClassName('post-editor__image-input')[0].files[0]) {
+            newPicture = document.getElementsByClassName('post-editor__image-input')[0].files[0];
+        }
 
         if (this.state.updating) {
             if (!this.state.html || !this.state.title) {
@@ -68,6 +71,7 @@ class PostEditor extends React.Component {
                 />
                 <label htmlFor='image'>Add Header Image</label>
                 <button className="post-editor__button" onClick={this.submitPost}>Submit Post</button>
+                <p>{this.state.error}</p>
             </div>
         )
     };
