@@ -54,56 +54,88 @@ exports[`should render ArticlePage component correctly 1`] = `
       More Articles
     </h2>
     <SummarizedPost
-      date={
-        Object {
-          "day": 1,
-          "month": 2,
-          "year": 2017,
-        }
-      }
-      imageName="postPictureName"
-      imagePath="postPicture"
       key="123"
-      title="Title One"
-    />
-    <SummarizedPost
-      date={
+      post={
         Object {
-          "day": 1,
-          "month": 4,
-          "year": 2018,
+          "body": "This is the first blog post.",
+          "categories": Array [
+            "css",
+            "html",
+          ],
+          "id": "123",
+          "postDate": Object {
+            "day": 1,
+            "month": 2,
+            "year": 2017,
+          },
+          "postPicture": "postPicture",
+          "postPictureName": "postPictureName",
+          "title": "Title One",
         }
       }
-      imageName="postPictureNameNumberTwo"
-      imagePath="postPictureNumberTwo"
+    />
+    <SummarizedPost
       key="221"
-      title="Title Two"
-    />
-    <SummarizedPost
-      date={
+      post={
         Object {
-          "day": 5,
-          "month": 9,
-          "year": 2018,
+          "body": "This is the second blog post.",
+          "categories": Array [
+            "javascript",
+            "html",
+          ],
+          "id": "221",
+          "postDate": Object {
+            "day": 1,
+            "month": 4,
+            "year": 2018,
+          },
+          "postPicture": "postPictureNumberTwo",
+          "postPictureName": "postPictureNameNumberTwo",
+          "title": "Title Two",
         }
       }
-      imageName="postPictureNameNumberThree"
-      imagePath="postPictureNumberThree"
+    />
+    <SummarizedPost
       key="421"
-      title="Title Three"
-    />
-    <SummarizedPost
-      date={
+      post={
         Object {
-          "day": 27,
-          "month": 3,
-          "year": 2017,
+          "body": "This is the third blog post.",
+          "categories": Array [
+            "react",
+            "javascript",
+          ],
+          "id": "421",
+          "postDate": Object {
+            "day": 5,
+            "month": 9,
+            "year": 2018,
+          },
+          "postPicture": "postPictureNumberThree",
+          "postPictureName": "postPictureNameNumberThree",
+          "title": "Title Three",
         }
       }
-      imageName="postPictureNameNumberFour"
-      imagePath="postPictureNumberFour"
+    />
+    <SummarizedPost
       key="522"
-      title="Title Four"
+      post={
+        Object {
+          "body": "This is the fourth blog post.",
+          "categories": Array [
+            "ruby",
+            "python",
+          ],
+          "id": "522",
+          "postDate": Object {
+            "day": 27,
+            "month": 3,
+            "year": 2017,
+          },
+          "postPicture": "postPictureNumberFour",
+          "postPictureName": "postPictureNameNumberFour",
+          "title": "Title Four",
+        }
+      }
     />
   </article>
   <Connect(SideBar) />

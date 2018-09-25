@@ -10,7 +10,7 @@ export class SummarizedPost extends React.Component {
         return (
                 <Link to={`/posts/${this.props.post.title.replace(/ /g, "-")}`}>
                     <div className="summarized-post" >
-                        { this.props.post.imagePath && <img className="summarized-post__image" src={this.props.post.imagePath} alt={this.props.post.imageName}/>}
+                        { this.props.post.postPicture && <img className="summarized-post__image" src={this.props.post.postPicture} alt={this.props.post.postPictureName}/>}
                         <h2 className="summarized-post__title">{this.props.post.title}</h2>
                         <p className="summarized-post__date">{`Posted ${dateFormatter(this.props.post.postDate.day, this.props.post.postDate.month, this.props.post.postDate.year)}`}</p>
                     </div>

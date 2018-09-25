@@ -12,13 +12,16 @@
         align-items: center;
         color: $white;
         display: flex;
-        font-size: $font-size-xlarge;
+        font-family: $title;
+        font-size: $font-size-medium;
         grid-area: title;
     }
 }
 
 @media (min-width: $small-desktop-breakpoint) {
-    
+    .header__title {
+        font-size: $font-size-xlarge;
+    }
 }
 @media (min-width: $desktop-breakpoint) {
     .header {

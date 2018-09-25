@@ -46,10 +46,7 @@ export class ArticlePage extends React.Component {
                         {this.props.moreArticles.map((post) => (
                             <SummarizedPost 
                                 key = {post.id}
-                                title = {post.title}
-                                imageName = {post.postPictureName}
-                                imagePath = {post.postPicture}
-                                date = {post.postDate}
+                                post = {post}
                             />
                         ))}
                     </article>

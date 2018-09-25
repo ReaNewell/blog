@@ -8,6 +8,11 @@ exports[`should render SummarizedPost component correctly 1`] = `
   <div
     className="summarized-post"
   >
+    <img
+      alt="postPictureNameNumberTwo"
+      className="summarized-post__image"
+      src="postPictureNumberTwo"
+    />
     <h2
       className="summarized-post__title"
     >
