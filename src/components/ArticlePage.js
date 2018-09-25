@@ -13,18 +13,23 @@ export class ArticlePage extends React.Component {
         super(props);
 
         this.state = {
-            html: this.props.post.body.replace(/^"(.*)"$/, '$1')
+            html: this.props.post.body
+            // html: this.props.post.body.replace(/^"(.*)"$/, '$1')
         }
-    } 
+    }
     componentDidMount() {
         window.scroll(0, 0);
-
-        // Selects this the body element of this component and assign the HTML value of the post to that element.
-        const body = ReactDOM.findDOMNode(this).getElementsByClassName('article__body')[0];
-        body.innerHTML = this.state.html;
+        this.constructBody();
     }
     componentDidUpdate() {
         window.scroll(0, 0);
+        this.constructBody();
+    }
+    constructBody = () => {
+        // Selects this the body element of this component and assign the HTML value of the post to that element.
+        const body = ReactDOM.findDOMNode(this).getElementsByClassName('article__body')[0];
+        const html = this.props.post.body;
+        body.innerHTML = html;
     }
     render() {
         return (

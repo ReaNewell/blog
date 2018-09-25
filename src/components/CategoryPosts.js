@@ -10,10 +10,7 @@ export class CategoryPosts extends React.Component {
                 {sortReverseChronological(this.props.posts).map((post) => (
                     <SummarizedPost 
                         key = {post.id}
-                        title = {post.title}
-                        imageName = {post.postPictureName}
-                        imagePath = {post.postPicture}
-                        date = {post.postDate}
+                        post= {post}
                     />
                 ))}
             </div>
