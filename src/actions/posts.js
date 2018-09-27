@@ -1,6 +1,9 @@
+// Actions related to CRUD operations on posts.
+
 import database from '../firebase/firebase';
 import { firebase, storage } from '../firebase/firebase';
 
+// ADD POST
 export const addPost = ({id, title, body, postDate, categories}) => ({
     type: "ADD_POST",
     post: {
@@ -26,6 +29,8 @@ export const startAddPost = (postData = {}, image) => {
         } = postData;
         const post = { title, body, postDate, categories };
 
+        // Reference the posts array in database and push post to the end of the array.
+        // If an image paramater exists, store the image and set the link and image name properties on the related post object.
         return database.ref(`posts`).push(post).then((ref) => {
             dispatch(addPost({
                 id: ref.key,
@@ -68,6 +73,8 @@ export const startAddPost = (postData = {}, image) => {
     }
 }
 
+
+// REMOVE POSTS
 export const removePost = (id) => ({
     type: "REMOVE_POST",
     id
@@ -89,12 +96,15 @@ export const startRemovePost = (id, imageName) => {
     }
 }
 
+
+// SET POSTS
 export const setPosts = (posts) => ({
     type: "SET_POSTS",
     posts
 });
 export const startSetPosts = () => {
     return (dispatch) => {
+        // For each post in the database, add the post to an array to be sent to the Redux store. 
         return database.ref(`posts`).once('value').then((snapshot) => {
             let posts = [];
 
@@ -110,6 +120,8 @@ export const startSetPosts = () => {
     };
 };
 
+
+// UPDATE POSTS
 export const updatePost = (id, updates) => ({
     type: "UPDATE_POST",
     id,

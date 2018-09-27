@@ -1,3 +1,5 @@
+// Actions related to login/logout functionality.
+
 import { firebase } from '../firebase/firebase';
 
 export const login = (uid) => ({

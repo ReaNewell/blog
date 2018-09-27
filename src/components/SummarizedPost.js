@@ -2,21 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import dateFormatter from '../tools/dateFormatter';
 
-export class SummarizedPost extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-    render() {
-        return (
-                <Link to={`/posts/${this.props.post.title.replace(/ /g, "-")}`}>
-                    <div className="summarized-post" >
-                        { this.props.post.postPicture && <img className="summarized-post__image" src={this.props.post.postPicture} alt={this.props.post.postPictureName}/>}
-                        <h2 className="summarized-post__title">{this.props.post.title}</h2>
-                        <p className="summarized-post__date">{`Posted ${dateFormatter(this.props.post.postDate.day, this.props.post.postDate.month, this.props.post.postDate.year)}`}</p>
-                    </div>
-                </Link>
-        )
-    }
-}
+export const SummarizedPost = (props) => (
+    <Link to={`/posts/${props.post.title.replace(/ /g, "-")}`}>
+        <div className="summarized-post" >
+            { props.post.postPicture && <img className="summarized-post__image" src={props.post.postPicture} alt={props.post.postPictureName}/>}
+            <h2 className="summarized-post__title">{props.post.title}</h2>
+            <p className="summarized-post__date">{`Posted ${dateFormatter(props.post.postDate.day, props.post.postDate.month, props.post.postDate.year)}`}</p>
+        </div>
+    </Link>
+);
 
 export default SummarizedPost;
