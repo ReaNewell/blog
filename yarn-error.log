@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/Cellar/node/9.10.1/bin/node /usr/local/Cellar/yarn/1.5.1_1/libexec/bin/yarn.js test
+  /usr/local/Cellar/node/9.10.1/bin/node /usr/local/Cellar/yarn/1.5.1_1/libexec/bin/yarn.js test --watch
 
 PATH: 
   /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
@@ -9943,7 +9943,7 @@ Trace:
   Error: Command failed.
   Exit code: 1
   Command: sh
-  Arguments: -c cross-env NODE_ENV=test jest --config=jest.config.json
+  Arguments: -c cross-env NODE_ENV=test jest --config=jest.config.json --watch
   Directory: /Users/reanewell/Documents/programming/blog
   Output:
   
