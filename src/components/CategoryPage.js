@@ -7,24 +7,26 @@ import { Header } from './Header';
 import SideBar from './SideBar';
 import CategoryPosts from './CategoryPosts';
 
-export const CategoryPage = (props) => {
+export class CategoryPage extends React.Component {
     componentDidMount = () => {
         window.scroll(0, 0);
     }
     componentDidUpdate = () => {
         window.scroll(0, 0);
     }
-    return(
-        <div className="homepage">
-            <Header />
-            <CategoryPosts 
-                category={props.category}
-                posts={props.posts}
-            />
-            <SideBar />
-            <Footer />
-        </div>
-    )
+    render() {
+        return(
+            <div className="homepage">
+                <Header />
+                <CategoryPosts 
+                    category={this.props.category}
+                    posts={this.props.posts}
+                />
+                <SideBar />
+                <Footer />
+            </div>
+        )
+    }
 };
 const mapStateToProps = (state, props) => ({
     category: props.match.params.category,

@@ -10,8 +10,10 @@ import './styles/styles.scss';
 import { LoadingPage } from './components/LoadingPage';
 import { startSetPosts } from './actions/posts';
 import { login, logout } from './actions/auth';
+import { startInitializeSettings } from './actions/settings';
 
 const store = configureStore();
+store.dispatch(startInitializeSettings());
 const jsx = (
     <Provider store={store}>
         <AppRouter />

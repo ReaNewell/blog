@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 export const Header = () => (
@@ -9,3 +10,8 @@ export const Header = () => (
         </Link>
     </header>
 );
+const mapStateToProps = (state) => ({
+    title: state.settings.title
+});
+
+export default connect(mapStateToProps)(Header);
