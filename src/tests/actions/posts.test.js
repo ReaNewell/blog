@@ -11,7 +11,6 @@ import {
     startUpdatePost
 } from '../../actions/posts';
 import posts from '../fixtures/posts';
-import categories from '../fixtures/categories';
 import database, { storage } from '../../firebase/firebase';
 
 const uid = 'testinguid';
@@ -46,7 +45,7 @@ test('should setup addPost action object with provided values', () => {
         }
     })
 });
-test('should add post to database and store without picture', (done) => {
+test('should add post to database and store without picture', async (done) => {
     const store = createMockStore(defaultAuthState);
     const postData = {
         title: 'All About CSS',
@@ -55,7 +54,8 @@ test('should add post to database and store without picture', (done) => {
         postDate: {day: 2, month: 11, year: 2017}
     };
 
-    store.dispatch(startAddPost(postData)).then(() => {
+    await store.dispatch(startAddPost(postData));
+    const snapshot = await (() => {
         const actions = store.getActions();
         expect(actions[0]).toEqual({
             type: 'ADD_POST',
@@ -65,12 +65,11 @@ test('should add post to database and store without picture', (done) => {
             }
         });
         return database.ref(`posts/${actions[0].post.id}`).once('value');
-    }).then((snapshot) => {
-        expect(snapshot.val()).toEqual(postData);
+    })();
+    await expect(snapshot.val()).toEqual(postData);
         done();
-    })
 });
-test('should add post to database and store with picture', (done) => {
+test('should add post to database and store with picture', async (done) => {
     const store = createMockStore(defaultAuthState);
     const postData = {
         title: 'All About CSS',
@@ -81,7 +80,8 @@ test('should add post to database and store with picture', (done) => {
     let image = new File(["foo"], "image.png");
 
 
-    store.dispatch(startAddPost(postData, image)).then(() => {
+    await store.dispatch(startAddPost(postData, image));
+    const snapshot = await (() => {
         const actions = store.getActions();
         expect(actions[0]).toEqual({
             type: 'ADD_POST',
@@ -91,13 +91,10 @@ test('should add post to database and store with picture', (done) => {
             }
         });
         return database.ref(`posts/${actions[0].post.id}`).once('value');
-    }).then((snapshot) => {
-        expect(snapshot.val()).toEqual(postData);
-        setTimeout(() => {
+    })();
+    await expect(snapshot.val()).toEqual(postData);
             done();
-        }, 500);
     });
-});
 
 
 // REMOVING POSTS
@@ -106,19 +103,19 @@ test('should setup removePost action object', () => {
     const action = (removePost(id));
     expect(action).toEqual({ type: "REMOVE_POST", id });
 });
-test('should delete post from database and store', (done) => {
+test('should delete post from database and store', async (done) => {
     const store = createMockStore(defaultAuthState);
     const id = posts[0].id;
 
-    store.dispatch(startRemovePost(id)).then(() => {
+    await store.dispatch(startRemovePost(id));
+    const snapshot = await (() => {
         const actions = store.getActions();
         expect(actions[0]).toEqual({ type: 'REMOVE_POST', id });
         return database.ref(`posts/${id}`).once('value');
-    }).then((snapshot) => {
-        expect(snapshot.val()).toBeFalsy();
+    })();
+    await expect(snapshot.val()).toBeFalsy();
         done();
     });
-});
 
 
 // SETTING POSTS
@@ -126,16 +123,15 @@ test('should setup setPosts action object', () => {
     const action = (setPosts(posts));
     expect(action).toEqual({ type: 'SET_POSTS', posts });
 });
-test('should fetch posts data from firebase', (done) => {
+test('should fetch posts data from firebase', async (done) => {
     const store = createMockStore(defaultAuthState);
 
-    store.dispatch(startSetPosts()).then(() => {
+    await store.dispatch(startSetPosts());
+    await (() => {
         const actions = store.getActions();
         expect(actions[0]).toEqual({ type: 'SET_POSTS', posts });
-        setTimeout(() => {
+    })();
             done();
-        }, 500);
-    })
 });
 
 
@@ -148,22 +144,24 @@ test('should setup updatePost action object', () => {
     const action = updatePost(posts[1].id, updates);
     expect(action).toEqual({ type: 'UPDATE_POST', id: posts[1].id, updates });
 });
-test('should update post data in database and store', () => {
+test('should update post data in database and store', async (done) => {
     const store = createMockStore(defaultAuthState);
     const updates = {
         title: 'All About CSS',
         body: 'This is the test post body.'
     };
 
-    store.dispatch(startUpdatePost(posts[1].id, updates)).then((done) => {
+    await store.dispatch(startUpdatePost(posts[1].id, updates));
+    
+    const snapshot = await (() => {
         const actions = store.getActions();
-        expect(actions[0]).toEqual({ type: 'UPDATE_POST', updates });
+        expect(actions[0]).toEqual({ type: 'UPDATE_POST', id: posts[1].id,updates });
         return database.ref(`posts/${posts[1].id}`).once('value');
-    }).then((snapshot) => {
-        expect(snapshot.val()).toEqual({
+    })();
+    await expect(snapshot.val()).toEqual({
             ...posts[1],
-            ...updates
+        id: undefined,
+        ...updates,
         });
         done();
     });
-});
