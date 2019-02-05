@@ -1,5 +1,7 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { startLogout } from '../../actions/auth';
 
 export class AdminSideBar extends React.Component {
     chooseActiveButton = (buttonPath) => {
@@ -12,10 +14,14 @@ export class AdminSideBar extends React.Component {
                 <Link className={this.chooseActiveButton('create')} to="/admin">Create Post</Link>
                 <Link className={this.chooseActiveButton('edit')} to="/admin/edit-posts">Edit Posts</Link>
                 <Link className={this.chooseActiveButton('settings')} to="/admin/settings">Settings</Link>
-                <button className="admin-sidebar__button--logout">Logout</button>
+                <button className="admin-sidebar__button--logout" onClick={this.props.startLogout}>Logout</button>
             </div>
         )
     }
 }
 
-export default AdminSideBar;
+const mapDispatchToProps = (dispatch) => ({
+    startLogout: () => dispatch(startLogout())
+});
+
+export default connect(undefined, mapDispatchToProps)(AdminSideBar);
