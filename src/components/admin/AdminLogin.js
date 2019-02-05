@@ -26,21 +26,29 @@ export class AdminLogin extends React.Component {
     }
     render() {
         return (
-            <div>
-                <h2>Please login, sir.</h2>
-                <input 
-                    onChange={this.onEmailChange}
-                    placeholder='Email'
-                    type='text'
-                    value={this.state.email}
-                />
-                <input 
-                    onChange={this.onPasswordChange}
-                    placeholder='Password'
-                    type='text'
-                    value={this.state.password}
-                />
-                <button onClick={this.loginWithEmail}>Log In</button>
+            <div className="admin-login">
+                <h1 className="admin-login__title">Blog Admin Sign In</h1>
+                <div className="login-modal">
+                    <label htmlFor='email-input' className="login-modal__label">EMAIL</label>
+                    <input 
+                        onChange={this.onEmailChange}
+                        className="login-modal__input"
+                        id="email-input"
+                        type='text'
+                        value={this.state.email}
+                        required
+                    />
+                    <label htmlFor='password-input' className="login-modal__label">PASSWORD</label>
+                    <input 
+                        onChange={this.onPasswordChange}
+                        className="login-modal__input"
+                        id="password-input"
+                        type='password'
+                        value={this.state.password}
+                        required
+                    />
+                    <button className="login-modal__button" onClick={this.loginWithEmail}>LOGIN</button>
+                </div>
             </div>
         )
     }
