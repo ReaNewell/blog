@@ -85,3 +85,19 @@
         }
     }
 }
+
+@media (max-width: $tablet-breakpoint) {
+    .admin-login {
+        background: linear-gradient(70deg, #67DFE7 20%, #4ACCFF 80%);
+    }
+
+    .login-modal {
+        background: none;
+        box-sizing: border-box;
+        min-width: 90vw;
+
+        &__button {
+            width: 40%;
+        }
+    }
+}
