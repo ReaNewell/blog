@@ -5,6 +5,10 @@
 
     -webkit-appearance: none;
     -moz-appearance: none;
+
+    &:focus {
+        outline: 3px double hsl(266, 72%, 55%);
+    }
 }
 
 html {
