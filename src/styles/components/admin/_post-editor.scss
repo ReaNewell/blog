@@ -10,6 +10,7 @@
         font-size: $font-size-medium;
         margin-bottom: $m-size;
         padding: .3rem;
+        text-align: center;
         width: 100%;
 
         &:focus {
@@ -18,7 +19,12 @@
         }
     }
     &__button {
+        background: linear-gradient(-70deg, $green-light, $green-med);
+        border: 2px solid $green-dark;
+        color: $white;
+        font-weight: bold;
         padding: $s-size;
+        width: 100%;
     }
     &__image-input {
         height: 0.1px;
@@ -29,26 +35,62 @@
         width: 0.1px;
 
         & + label {
+            align-items: center;
             background: $green-med;
+            background-position: center;
+            background-size: cover;
+            border: 2px solid $green-dark;
             color: white;
-            display: block;
-            font-size: $font-size-medium;
-            padding: $xs-size;
+            display: flex;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: $font-size-small;
+            height: 6rem;
+            justify-content: center;
+            margin-bottom: $m-size;
+            padding: $s-size;
+            text-align: center;
+
+            &:hover {
+                cursor: pointer;
+            }
         }
+    }
+    &__error {
+        color: $blue-med;
+        font-weight: bold;
+        padding: 1.5rem;
+        text-align: center;
+        text-decoration: underline;
     }
 }
 
 .pell {
 
     .pell-actionbar {
-
+        border-bottom: 2px solid gray;
     }
     .pell-button {
+        background: none;
+
+        padding: .5em;
+        font-size: $s-size;
+        margin: .5em;
+        min-width: 3rem;
+
         &:focus {
             outline: -webkit-focus-ring-color auto 5px;
         }
+        &-selected {
+            background: $blue-light;
+        }
     }
     .pell-content {
+        padding-top: 3rem;
+        margin-bottom: $l-size;
         min-height: 40rem;
+
+        &:focus {
+            outline: none;
+        }
     }
 }

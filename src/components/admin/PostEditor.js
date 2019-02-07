@@ -18,11 +18,25 @@ export class PostEditor extends React.Component {
         this.editor = init({
             element: document.getElementById('editor'),
             onChange: html => this.setState({ html }),
-            actions: ['bold', 'underline', 'italic', 'heading1', 'heading2', 'quote', 'image', 'code']
+            actions: ['bold', 'underline', 'italic', 'heading1', 'heading2', 'quote', 'image', 'code', 'paragraph']
         })
         if (this.state.updating) {
             this.editor.content.innerHTML = this.state.html;
             document.getElementsByClassName('post-editor__title-input')[0].value = this.state.title;
+        }
+    }
+    previewPhoto = () => {
+        const imageInputElement = document.getElementById('image-label');
+        let file = document.getElementsByClassName('post-editor__image-input')[0].files[0];
+        let reader = new FileReader();
+
+        reader.onloadend = function() {
+            imageInputElement.style.backgroundImage = `url('${reader.result}')`;
+            imageInputElement.style.border = 'none';
+        }
+
+        if (file) {
+            reader.readAsDataURL(file);
         }
     }
     onTitleChange = (e) => {
@@ -38,14 +52,14 @@ export class PostEditor extends React.Component {
 
         if (this.state.updating) {
             if (!this.state.html || !this.state.title) {
-                this.setState(() => ({ error: "You must have a title and body."}));
+                this.setState(() => ({ error: "You must have a title and body!"}));
             } else {
                 this.setState(() => ({ error: ""}));
                 this.props.startUpdatePost(this.props.post.id, {title: this.state.title, body: this.state.html}, this.props.post.postPictureName, newPicture);
             }
         } else {
             if (!this.state.html || !this.state.title) {
-                this.setState(() => ({ error: "You must have a title and body."}));
+                this.setState(() => ({ error: "You must have a title and body!"}));
             } else {
                 this.setState(() => ({ error: ""}));
                 this.props.startAddPost({
@@ -61,17 +75,18 @@ export class PostEditor extends React.Component {
         return (
             <div className="post-editor">
                 <input className="post-editor__title-input" onChange={this.onTitleChange} placeholder="Article Title" type="text"/>
-                <div id="editor" className="pell" />
                 <input 
                     accept='.jpg, .jpeg' 
                     className="post-editor__image-input"
                     id='image'
                     name='image'
+                    onChange={this.previewPhoto}
                     type='file'
                 />
-                <label htmlFor='image'>Add Header Image</label>
+                <label id='image-label' htmlFor='image'>Add Header Image</label>
+                <div id="editor" className="pell" />
                 <button className="post-editor__button" onClick={this.submitPost}>Submit Post</button>
-                <p>{this.state.error}</p>
+                <p className='post-editor__error'>{this.state.error}</p>
             </div>
         )
     };
